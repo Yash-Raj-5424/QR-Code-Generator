@@ -20,6 +20,15 @@ generate.addEventListener('click', ()=>{
             return;
         }
         qrimage.appendChild(canvas);
+        const download = document.createElement('button')
+        download.textContent = "Download QR Code";
+        download.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'qr-code.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+        
      })
 
 })
